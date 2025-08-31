@@ -15,7 +15,6 @@
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* Aplica el efecto parallax al cuerpo de la página */
         body {
             font-family: var(--font-family);
             color: var(--text-color);
@@ -23,11 +22,6 @@
             padding: 0;
             line-height: 1.6;
             background-color: var(--white);
-            background-image: url('src="https://github.com/user-attachments/assets/70a85434-0b19-46a6-95fd-bd53e819598a');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
         }
 
         .container {
@@ -36,20 +30,27 @@
             padding: 0 20px;
         }
 
+        /* Estilo para el logo en la parte superior */
+        .top-logo {
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+        
+        .top-logo img {
+            height: 100px; /* Ajusta el tamaño para que sea más grande */
+        }
+
         /* Cabecera de la página */
         .header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Alinea los elementos a la derecha */
             align-items: center;
             padding: 30px 0;
             background-color: rgba(255, 255, 255, 0.8);
             position: sticky; /* Hace que el encabezado se pegue a la parte superior */
             top: 0; /* Lo mantiene en la parte superior */
             z-index: 1000; /* Asegura que esté por encima de otros elementos */
-        }
-
-        .header .logo img {
-            height: 60px;
         }
 
         .header nav a {
@@ -71,6 +72,15 @@
 
         .cta-button:hover {
             background-color: var(--secondary-color);
+        }
+
+        /* Contenedor para el efecto parallax */
+        .parallax-container {
+            background-image: url('https://github.com/user-attachments/assets/70a85434-0b19-46a6-95fd-bd53e819598a');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         /* Secciones de contenido */
@@ -99,7 +109,6 @@
         .hero {
             padding: 100px 0;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .hero h1 {
@@ -209,12 +218,9 @@
 </head>
 <body>
 
-    <!-- Cabecera de la página con logo y menú -->
+    <!-- Cabecera de la página con el menú -->
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <img src="https://github.com/user-attachments/assets/2fa67c2f-badf-44ff-ba7f-d150aaa10ffe" alt="Logo de Menta Fresca Consultora Digital">
-            </div>
             <nav>
                 <a href="#inicio">Inicio</a>
                 <a href="#enfoque">Enfoque</a>
@@ -226,6 +232,11 @@
         </div>
     </header>
 
+    <!-- Logo principal antes del bloque de inicio -->
+    <div class="top-logo">
+        <img src="https://github.com/user-attachments/assets/0704f6b9-794f-4de0-8c82-eec4e55e4bb7" alt="Logo de Menta Fresca Consultora Digital">
+    </div>
+
     <!-- Sección principal con el título y el llamado a la acción -->
     <section class="hero" id="inicio">
         <div class="container">
@@ -235,98 +246,101 @@
         </div>
     </section>
 
-    <!-- Sección de "Nuestro Enfoque" -->
-    <section class="section light-bg" id="enfoque">
-        <div class="container">
-            <h2>Nuestro Enfoque.</h2>
-            <p>Ayudamos a las empresas a ser más eficientes y competitivas mediante tecnología y marketing adaptados 100% a su realidad. No vendemos plantillas. Escuchamos, analizamos y proponemos soluciones digitales personalizadas que de verdad funcionan para su negocio.</p>
-        </div>
-    </section>
+    <!-- Contenedor para el efecto parallax en el resto de la web -->
+    <div class="parallax-container">
+        <!-- Sección de "Nuestro Enfoque" -->
+        <section class="section light-bg" id="enfoque">
+            <div class="container">
+                <h2>Nuestro Enfoque.</h2>
+                <p>Ayudamos a las empresas a ser más eficientes y competitivas mediante tecnología y marketing adaptados 100% a su realidad. No vendemos plantillas. Escuchamos, analizamos y proponemos soluciones digitales personalizadas que de verdad funcionan para su negocio.</p>
+            </div>
+        </section>
 
-    <!-- Sección de servicios (internos y externos) -->
-    <section class="section" id="servicios">
-        <div class="container">
-            <h2>Nuestros Servicios.</h2>
-            <p>Ofrecemos un servicio integral de consultoría, uniendo tres pilares clave para el crecimiento de tu negocio:</p>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Estrategia e Innovación</h3>
-                    <p>Te ayudamos a definir el rumbo de tu empresa y a identificar nuevas oportunidades para un crecimiento sostenible. Esto incluye:</p>
-                    <ul>
-                        <li><b>Plan Estratégico:</b> Analizamos tu modelo de negocio y creamos una hoja de ruta clara para alcanzar tus objetivos.</li>
-                        <li><b>Análisis de la Competencia:</b> Identificamos las fortalezas y debilidades de tu mercado para posicionarte mejor.</li>
-                        <li><b>Innovación en Modelos de Negocio:</b> Exploramos nuevas formas de generar valor y optimizar tus ingresos.</li>
-                    </ul>
-                </div>
-                <div class="service-item">
-                    <h3>Digitalización Interna</h3>
-                    <p>Hacemos que tu negocio sea más fluido y productivo por dentro, ayudándote con:</p>
-                    <ul>
-                        <li><b>Optimización de Procesos:</b> Identificamos y eliminamos tareas manuales y repetitivas.</li>
-                        <li><b>Automatización con IA:</b> Implementamos herramientas para que los procesos clave se realicen solos.</li>
-                        <li><b>Gestión y Organización:</b> Te ayudamos a implementar plataformas para organizar proyectos, tareas y centralizar la información.</li>
-                    </ul>
-                </div>
-                <div class="service-item">
-                    <h3>Digitalización Externa</h3>
-                    <p>Te ayudamos a atraer, conectar y convertir a tu público ideal con:</p>
-                    <ul>
-                        <li><b>Estrategia Digital:</b> Diseñamos un plan para tu presencia online.</li>
-                        <li><b>Presencia Online:</b> Creamos y optimizamos tu página web y perfiles en redes sociales.</li>
-                        <li><b>Marketing Estratégico:</b> Te guiamos en la planificación y lanzamiento de campañas para generar clientes.</li>
-                    </ul>
+        <!-- Sección de servicios (internos y externos) -->
+        <section class="section" id="servicios">
+            <div class="container">
+                <h2>Nuestros Servicios.</h2>
+                <p>Ofrecemos un servicio integral de consultoría, uniendo tres pilares clave para el crecimiento de tu negocio:</p>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Estrategia e Innovación</h3>
+                        <p>Te ayudamos a definir el rumbo de tu empresa y a identificar nuevas oportunidades para un crecimiento sostenible. Esto incluye:</p>
+                        <ul>
+                            <li><b>Plan Estratégico:</b> Analizamos tu modelo de negocio y creamos una hoja de ruta clara para alcanzar tus objetivos.</li>
+                            <li><b>Análisis de la Competencia:</b> Identificamos las fortalezas y debilidades de tu mercado para posicionarte mejor.</li>
+                            <li><b>Innovación en Modelos de Negocio:</b> Exploramos nuevas formas de generar valor y optimizar tus ingresos.</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3>Digitalización Interna</h3>
+                        <p>Hacemos que tu negocio sea más fluido y productivo por dentro, ayudándote con:</p>
+                        <ul>
+                            <li><b>Optimización de Procesos:</b> Identificamos y eliminamos tareas manuales y repetitivas.</li>
+                            <li><b>Automatización con IA:</b> Implementamos herramientas para que los procesos clave se realicen solos.</li>
+                            <li><b>Gestión y Organización:</b> Te ayudamos a implementar plataformas para organizar proyectos, tareas y centralizar la información.</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <h3>Digitalización Externa</h3>
+                        <p>Te ayudamos a atraer, conectar y convertir a tu público ideal con:</p>
+                        <ul>
+                            <li><b>Estrategia Digital:</b> Diseñamos un plan para tu presencia online.</li>
+                            <li><b>Presencia Online:</b> Creamos y optimizamos tu página web y perfiles en redes sociales.</li>
+                            <li><b>Marketing Estratégico:</b> Te guiamos en la planificación y lanzamiento de campañas para generar clientes.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sección de testimonios -->
-    <section class="section light-bg" id="testimonios">
-        <div class="container">
-            <h2>Experiencias de Clientes</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-item">
-                    <blockquote>"Estábamos desbordados con la gestión de pedidos y el inventario. Menta Fresca nos ayudó a implementar un sistema que nos ha ahorrado horas cada semana. Su enfoque es claro y muy práctico."</blockquote>
-                    <span class="client-name">— Ana P., Comercio Local</span>
-                </div>
-                <div class="testimonial-item">
-                    <blockquote>"No teníamos ni idea de por dónde empezar con el marketing online. Menta Fresca nos guió paso a paso y ahora tenemos una web que genera clientes y una estrategia en redes sociales que funciona."</blockquote>
-                    <span class="client-name">— Carlos G., Sector Industrial</span>
-                </div>
-                <div class="testimonial-item">
-                    <blockquote>"La digitalización parecía un mundo complejo, pero con la ayuda de Menta Fresca hemos logrado organizar nuestros proyectos y mejorar nuestra comunicación interna. Es como si hubieran puesto orden en el caos."</blockquote>
-                    <span class="client-name">— Sofía M., Consultora de Servicios</span>
+        <!-- Sección de testimonios -->
+        <section class="section light-bg" id="testimonios">
+            <div class="container">
+                <h2>Experiencias de Clientes</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-item">
+                        <blockquote>"Estábamos desbordados con la gestión de pedidos y el inventario. Menta Fresca nos ayudó a implementar un sistema que nos ha ahorrado horas cada semana. Su enfoque es claro y muy práctico."</blockquote>
+                        <span class="client-name">— Ana P., Comercio Local</span>
+                    </div>
+                    <div class="testimonial-item">
+                        <blockquote>"No teníamos ni idea de por dónde empezar con el marketing online. Menta Fresca nos guió paso a paso y ahora tenemos una web que genera clientes y una estrategia en redes sociales que funciona."</blockquote>
+                        <span class="client-name">— Carlos G., Sector Industrial</span>
+                    </div>
+                    <div class="testimonial-item">
+                        <blockquote>"La digitalización parecía un mundo complejo, pero con la ayuda de Menta Fresca hemos logrado organizar nuestros proyectos y mejorar nuestra comunicación interna. Es como si hubieran puesto orden en el caos."</blockquote>
+                        <span class="client-name">— Sofía M., Consultora de Servicios</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sección "Sobre Mí" para generar confianza -->
-    <section class="section" id="sobre-mi">
-        <div class="container">
-            <h2>Tu socio en la transformación digital.</h2>
-            <p>Soy Gari Peña, fundador de Menta Fresca. Mi trayectoria en consultoría en Deloitte y Accenture, trabajando con grandes corporaciones, me ha permitido entender de cerca los retos del mercado. Mi experiencia en el sector industrial, en áreas de marketing y ventas, me ha dado una visión práctica y profunda. Mi pasión es la tecnología y mi objetivo es usarla para crear soluciones que generen un impacto real y positivo. Te ofrezco un acompañamiento personalizado, cercano y honesto, enfocado en resultados. Puedes ver mi perfil en <a href="https://www.linkedin.com/in/garipe">LinkedIn</a>.</p>
-        </div>
-    </section>
+        <!-- Sección "Sobre Mí" para generar confianza -->
+        <section class="section" id="sobre-mi">
+            <div class="container">
+                <h2>Tu socio en la transformación digital.</h2>
+                <p>Soy Gari Peña, fundador de Menta Fresca. Mi trayectoria en consultoría en Deloitte y Accenture, trabajando con grandes corporaciones, me ha permitido entender de cerca los retos del mercado. Mi experiencia en el sector industrial, en áreas de marketing y ventas, me ha dado una visión práctica y profunda. Mi pasión es la tecnología y mi objetivo es usarla para crear soluciones que generen un impacto real y positivo. Te ofrezco un acompañamiento personalizado, cercano y honesto, enfocado en resultados. Puedes ver mi perfil en <a href="https://www.linkedin.com/in/garipe">LinkedIn</a>.</p>
+            </div>
+        </section>
 
-    <!-- Sección de contacto con un formulario -->
-    <section class="section light-bg" id="contacto">
-        <div class="container">
-            <h2>Hablemos de tu negocio.</h2>
-            <p>Cuéntame cuáles son tus retos o qué te gustaría optimizar. Juntos podemos diseñar un plan para hacer crecer tu empresa de forma inteligente.</p>
-            <form class="contact-form">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required>
+        <!-- Sección de contacto con un formulario -->
+        <section class="section light-bg" id="contacto">
+            <div class="container">
+                <h2>Hablemos de tu negocio.</h2>
+                <p>Cuéntame cuáles son tus retos o qué te gustaría optimizar. Juntos podemos diseñar un plan para hacer crecer tu empresa de forma inteligente.</p>
+                <form class="contact-form">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </div>
     
 </body>
 </html>
