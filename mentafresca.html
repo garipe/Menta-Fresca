@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menta Fresca Consultora Digital</title>
+    <style>
+        /* Estilo general para un diseño limpio y moderno */
+        :root {
+            --primary-color: #4CAF50; /* Verde de tu logo */
+            --secondary-color: #8BC34A; /* Verde claro */
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --white: #fff;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cabecera de la página */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0; /* Aumentado para mejor integración */
+        }
+
+        .header .logo img {
+            height: 60px; /* Logo más grande */
+        }
+
+        .header nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Secciones de contenido */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section.light-bg {
+            background-color: var(--light-gray);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+        }
+        
+        .services-grid {
+            display: flex;
+            gap: 40px;
+            text-align: left;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service-item {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .service-item ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .service-item ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .service-item ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Sección de testimonios */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .testimonial-item blockquote {
+            font-style: italic;
+            margin: 0;
+        }
+        
+        .testimonial-item .client-name {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        /* Sección Parallax */
+        .parallax-section {
+            background-image: url('ilustracionMentaFresca.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px; 
+            position: relative;
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--white);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .parallax-overlay h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera de la página con logo y menú -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo menta fresca.jpg" alt="Logo de Menta Fresca Consultora Digital">
+            </div>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#enfoque">Enfoque</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#contacto" class="cta-button">Agenda tu Cita</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección principal con el título y el llamado a la acción -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Digitalización Integral para Empresas</h1>
+            <p>Optimizamos tus procesos y potenciamos tu presencia online para que tu negocio sea más eficiente y visible.</p>
+            <a href="#contacto" class="cta-button">Agenda una Cita Gratuita</a>
+        </div>
+    </section>
+
+    <!-- Sección de "Nuestro Enfoque" -->
+    <section class="section light-bg" id="enfoque">
+        <div class="container">
+            <h2>Nuestro Enfoque.</h2>
+            <p>Ayudamos a las empresas a ser más eficientes y competitivas mediante tecnología y marketing adaptados 100% a su realidad. No vendemos plantillas. Escuchamos, analizamos y proponemos soluciones digitales personalizadas que de verdad funcionan para su negocio.</p>
+        </div>
+    </section>
+
+    <!-- Sección de servicios (internos y externos) -->
+    <section class="section" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios.</h2>
+            <p>Ofrecemos un servicio integral de consultoría, uniendo tres pilares clave para el crecimiento de tu negocio:</p>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Estrategia e Innovación</h3>
+                    <p>Te ayudamos a definir el rumbo de tu empresa y a identificar nuevas oportunidades para un crecimiento sostenible. Esto incluye:</p>
+                    <ul>
+                        <li><b>Plan Estratégico:</b> Analizamos tu modelo de negocio y creamos una hoja de ruta clara para alcanzar tus objetivos.</li>
+                        <li><b>Análisis de la Competencia:</b> Identificamos las fortalezas y debilidades de tu mercado para posicionarte mejor.</li>
+                        <li><b>Innovación en Modelos de Negocio:</b> Exploramos nuevas formas de generar valor y optimizar tus ingresos.</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Digitalización Interna</h3>
+                    <p>Hacemos que tu negocio sea más fluido y productivo por dentro, ayudándote con:</p>
+                    <ul>
+                        <li><b>Optimización de Procesos:</b> Identificamos y eliminamos tareas manuales y repetitivas.</li>
+                        <li><b>Automatización con IA:</b> Implementamos herramientas para que los procesos clave se realicen solos.</li>
+                        <li><b>Gestión y Organización:</b> Te ayudamos a implementar plataformas para organizar proyectos, tareas y centralizar la información.</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Digitalización Externa</h3>
+                    <p>Te ayudamos a atraer, conectar y convertir a tu público ideal con:</p>
+                    <ul>
+                        <li><b>Estrategia Digital:</b> Diseñamos un plan para tu presencia online.</li>
+                        <li><b>Presencia Online:</b> Creamos y optimizamos tu página web y perfiles en redes sociales.</li>
+                        <li><b>Marketing Estratégico:</b> Te guiamos en la planificación y lanzamiento de campañas para generar clientes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección con efecto parallax -->
+    <section class="parallax-section">
+        <div class="parallax-overlay">
+            <h2>Tecnología que Impulsa tu Crecimiento</h2>
+            <p>Conecta la estrategia de negocio con la tecnología para alcanzar tus metas.</p>
+        </div>
+    </section>
+
+    <!-- Sección de testimonios -->
+    <section class="section light-bg" id="testimonios">
+        <div class="container">
+            <h2>Experiencias de Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <blockquote>"Estábamos desbordados con la gestión de pedidos y el inventario. Menta Fresca nos ayudó a implementar un sistema que nos ha ahorrado horas cada semana. Su enfoque es claro y muy práctico."</blockquote>
+                    <span class="client-name">— Ana P., Comercio Local</span>
+                </div>
+                <div class="testimonial-item">
+                    <blockquote>"No teníamos ni idea de por dónde empezar con el marketing online. Menta Fresca nos guió paso a paso y ahora tenemos una web que genera clientes y una estrategia en redes sociales que funciona."</blockquote>
+                    <span class="client-name">— Carlos G., Sector Industrial</span>
+                </div>
+                <div class="testimonial-item">
+                    <blockquote>"La digitalización parecía un mundo complejo, pero con la ayuda de Menta Fresca hemos logrado organizar nuestros proyectos y mejorar nuestra comunicación interna. Es como si hubieran puesto orden en el caos."</blockquote>
+                    <span class="client-name">— Sofía M., Consultora de Servicios</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección "Sobre Mí" para generar confianza -->
+    <section class="section" id="sobre-mi">
+        <div class="container">
+            <h2>Tu socio en la transformación digital.</h2>
+            <p>Soy Gari Peña, fundador de Menta Fresca. Mi trayectoria en consultoría en Deloitte y Accenture, trabajando con grandes corporaciones, me ha permitido entender de cerca los retos del mercado. Mi experiencia en el sector industrial, en áreas de marketing y ventas, me ha dado una visión práctica y profunda. Mi pasión es la tecnología y mi objetivo es usarla para crear soluciones que generen un impacto real y positivo. Te ofrezco un acompañamiento personalizado, cercano y honesto, enfocado en resultados.</p>
+        </div>
+    </section>
+
+    <!-- Sección de contacto con un formulario -->
+    <section class="section light-bg" id="contacto">
+        <div class="container">
+            <h2>Hablemos de tu negocio.</h2>
+            <p>Cuéntame cuáles son tus retos o qué te gustaría optimizar. Juntos podemos diseñar un plan para hacer crecer tu empresa de forma inteligente.</p>
+            <form class="contact-form">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>
