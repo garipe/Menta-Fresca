@@ -15,6 +15,7 @@
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
+        /* Aplica el efecto parallax al cuerpo de la página */
         body {
             font-family: var(--font-family);
             color: var(--text-color);
@@ -22,6 +23,11 @@
             padding: 0;
             line-height: 1.6;
             background-color: var(--white);
+            background-image: url('src="https://github.com/user-attachments/assets/70a85434-0b19-46a6-95fd-bd53e819598a');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .container {
@@ -35,11 +41,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 0; /* Aumentado para mejor integración */
+            padding: 30px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: sticky; /* Hace que el encabezado se pegue a la parte superior */
+            top: 0; /* Lo mantiene en la parte superior */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
         }
 
         .header .logo img {
-            height: 60px; /* Logo más grande */
+            height: 60px;
         }
 
         .header nav a {
@@ -67,10 +77,11 @@
         .section {
             padding: 80px 0;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .section.light-bg {
-            background-color: var(--light-gray);
+            background-color: rgba(244, 244, 244, 0.8);
         }
 
         h1, h2, h3 {
@@ -88,6 +99,7 @@
         .hero {
             padding: 100px 0;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .hero h1 {
@@ -161,38 +173,6 @@
             font-weight: bold;
             margin-top: 15px;
             display: block;
-        }
-
-        /* Sección Parallax */
-        .parallax-section {
-            background-image: url('https://github.com/user-attachments/assets/70a85434-0b19-46a6-95fd-bd53e819598a');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 400px; 
-            position: relative;
-        }
-
-        .parallax-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: var(--white);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .parallax-overlay h2 {
-            color: var(--white);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
         }
 
         .contact-form {
@@ -300,14 +280,6 @@
         </div>
     </section>
 
-    <!-- Sección con efecto parallax -->
-    <section class="parallax-section">
-        <div class="parallax-overlay">
-            <h2>Tecnología que Impulsa tu Crecimiento</h2>
-            <p>Conecta la estrategia de negocio con la tecnología para alcanzar tus metas.</p>
-        </div>
-    </section>
-
     <!-- Sección de testimonios -->
     <section class="section light-bg" id="testimonios">
         <div class="container">
@@ -333,7 +305,7 @@
     <section class="section" id="sobre-mi">
         <div class="container">
             <h2>Tu socio en la transformación digital.</h2>
-            <p>Soy Gari Peña, fundador de Menta Fresca. Mi trayectoria en consultoría en Deloitte y Accenture, trabajando con grandes corporaciones, me ha permitido entender de cerca los retos del mercado. Mi experiencia en el sector industrial, en áreas de marketing y ventas, me ha dado una visión práctica y profunda. Mi pasión es la tecnología y mi objetivo es usarla para crear soluciones que generen un impacto real y positivo. Te ofrezco un acompañamiento personalizado, cercano y honesto, enfocado en resultados.</p>
+            <p>Soy Gari Peña, fundador de Menta Fresca. Mi trayectoria en consultoría en Deloitte y Accenture, trabajando con grandes corporaciones, me ha permitido entender de cerca los retos del mercado. Mi experiencia en el sector industrial, en áreas de marketing y ventas, me ha dado una visión práctica y profunda. Mi pasión es la tecnología y mi objetivo es usarla para crear soluciones que generen un impacto real y positivo. Te ofrezco un acompañamiento personalizado, cercano y honesto, enfocado en resultados. Puedes ver mi perfil en <a href="https://www.linkedin.com/in/garipe">LinkedIn</a>.</p>
         </div>
     </section>
 
@@ -348,7 +320,6 @@
 
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-
                 <label for="message">Mensaje</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
@@ -359,4 +330,3 @@
     
 </body>
 </html>
-
